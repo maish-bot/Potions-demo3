@@ -139,7 +139,7 @@ body {
     letter-spacing: 1.5px;
     text-decoration: none;
     border: 2px solid var(--accent-orange);
-    border-radius: 0px; /* Removed rounded pill shape */
+    border-radius: 0px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -348,7 +348,7 @@ body {
     background-color: var(--accent-orange);
     color: #000000;
     border: 2px solid var(--accent-orange);
-    border-radius: 0px; /* Sharp corners */
+    border-radius: 0px;
     font-family: var(--font-heading);
     font-weight: 900;
     font-size: 1.1rem;
@@ -437,7 +437,7 @@ body {
     color: var(--text-muted);
     line-height: 1.6;
     font-weight: 500;
-    text-transform: none; /* Keep long body text readable */
+    text-transform: none;
 }
 
 .accordion-item.open .accordion-panel {
@@ -625,12 +625,20 @@ body {
         display: none; 
     }
 
-    .purchase-stack {
-        grid-template-columns: 110px 1fr;
-    }
-
     .footer-grid { 
         grid-template-columns: 1fr; 
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .footer-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-tagline {
+        max-width: 100%;
     }
 
     .footer-bottom { 
@@ -638,24 +646,161 @@ body {
         gap: 1.25rem; 
         text-align: center; 
     }
+
+    .payment-badges {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 }
 
 @media (max-width: 480px) {
+    .announcement-bar {
+        font-size: 0.65rem;
+        padding: 0.6rem 0.5rem;
+        letter-spacing: 1px;
+    }
+
+    .navbar {
+        padding: 0.75rem 0;
+    }
+
+    .navbar .logo {
+        font-size: 1.6rem;
+    }
+
+    .header-buy-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+        min-height: 38px;
+    }
+
     .product-section {
-        padding: 1.5rem 0 3rem 0;
+        padding: 1.5rem 0 2.5rem 0;
+    }
+
+    .product-grid {
+        gap: 2rem;
+    }
+
+    .product-info {
+        align-items: center;
+        text-align: center;
+    }
+
+    .product-title {
+        font-size: 2rem;
+        line-height: 1.05;
+        margin-bottom: 0.5rem;
+    }
+
+    .review-stars-summary {
+        justify-content: center;
+        font-size: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .price-container {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .control-group {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .pill-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .pill-btn {
+        width: 100%;
+        max-width: 280px;
+        min-height: 44px;
+        font-size: 0.8rem;
     }
 
     .purchase-stack {
         grid-template-columns: 1fr;
-    }
-
-    .gallery-row {
         gap: 0.75rem;
+        width: 100%;
+        margin-bottom: 1.5rem;
     }
 
-    .pill-btn, 
-    .add-to-cart-btn, 
-    .header-buy-btn {
+    .quantity-selector {
         width: 100%;
+        min-height: 46px;
+        justify-content: center;
+    }
+
+    .qty-btn {
+        width: 50px;
+        min-height: 46px;
+    }
+
+    .add-to-cart-btn {
+        width: 100%;
+        min-height: 48px;
+        font-size: 0.95rem;
+    }
+
+    .sketch-tagline {
+        font-size: 1rem;
+        text-align: center;
+        border-left: none;
+        border-bottom: 2px solid var(--accent-orange);
+        padding-left: 0;
+        padding-bottom: 0.35rem;
+        display: inline-block;
+        margin-bottom: 1rem;
+    }
+
+    .sketch-bullet-list {
+        list-style: none;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .sketch-bullet-list li {
+        font-size: 0.8rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .accordion-stack {
+        width: 100%;
+        text-align: left;
+    }
+
+    .accordion-trigger {
+        font-size: 0.85rem;
+        min-height: 48px;
+    }
+
+    .accordion-content {
+        font-size: 0.8rem;
+    }
+
+    .what-it-does-box {
+        width: 100%;
+        padding: 1.25rem 1rem;
+        margin-top: 1.5rem;
+        text-align: center;
+    }
+
+    .what-heading {
+        font-size: 0.9rem;
+    }
+
+    .what-text {
+        font-size: 0.8rem;
+    }
+
+    .what-it-does-box ul {
+        list-style: none;
+    }
+
+    .what-it-does-box li {
+        font-size: 0.75rem;
     }
 }
