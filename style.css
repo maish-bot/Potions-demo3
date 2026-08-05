@@ -28,7 +28,7 @@ body {
     color: var(--text-white);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
-    text-transform: uppercase; /* Streetwear brutalist typography default */
+    text-transform: uppercase;
 }
 
 .container {
@@ -41,7 +41,7 @@ body {
 .product-section,
 .accordion-item,
 .review-stars-summary {
-    scroll-margin-top: 100px; /* Buffer to prevent sticky navbar from hiding sections */
+    scroll-margin-top: 100px;
 }
 
 /* --- ANNOUNCEMENT BAR --- */
@@ -70,6 +70,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1.5rem; /* Added gap to prevent logo and nav-right overlapping on small screens */
 }
 
 .navbar .logo {
@@ -80,6 +81,7 @@ body {
     text-decoration: none;
     color: var(--text-white);
     text-transform: uppercase;
+    flex-shrink: 0;
 }
 
 .nav-links {
@@ -104,7 +106,8 @@ body {
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
+    gap: 1rem;
+    margin-left: auto; /* Ensures space push from logo */
 }
 
 .social-link {
@@ -132,7 +135,7 @@ body {
 .header-buy-btn {
     background-color: var(--accent-orange);
     color: #000000;
-    padding: 0.6rem 1.5rem;
+    padding: 0.6rem 1.25rem;
     font-family: var(--font-heading);
     font-weight: 900;
     font-size: 0.85rem;
@@ -145,6 +148,7 @@ body {
     justify-content: center;
     min-height: 44px;
     transition: all 0.1s ease;
+    white-space: nowrap;
 }
 
 .header-buy-btn:hover {
@@ -377,9 +381,9 @@ body {
 }
 
 .sketch-bullet-list {
-    list-style: square inside;
+    list-style: square outside; /* Clean square bullets */
     margin-bottom: 2rem;
-    padding-left: 0;
+    padding-left: 1.25rem;
 }
 
 .sketch-bullet-list li {
@@ -664,13 +668,31 @@ body {
         padding: 0.75rem 0;
     }
 
+    .nav-container {
+        gap: 0.75rem;
+    }
+
     .navbar .logo {
-        font-size: 1.6rem;
+        font-size: 1.4rem; /* Scaled down slightly so social icon has room */
+    }
+
+    .nav-right {
+        gap: 0.5rem;
+    }
+
+    .social-link {
+        min-width: 38px;
+        min-height: 38px;
+    }
+
+    .social-link svg {
+        width: 18px;
+        height: 18px;
     }
 
     .header-buy-btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.75rem;
+        padding: 0.4rem 0.85rem;
+        font-size: 0.7rem;
         min-height: 38px;
     }
 
@@ -757,9 +779,11 @@ body {
     }
 
     .sketch-bullet-list {
-        list-style: none;
+        list-style: square inside;
         margin-bottom: 1.5rem;
-        text-align: center;
+        text-align: left;
+        display: inline-block;
+        padding-left: 0;
     }
 
     .sketch-bullet-list li {
@@ -797,7 +821,7 @@ body {
     }
 
     .what-it-does-box ul {
-        list-style: none;
+        list-style: square inside;
     }
 
     .what-it-does-box li {
